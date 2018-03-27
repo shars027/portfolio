@@ -123,7 +123,7 @@ div {
 	top: 75px;
 
 	border-width: 1.5px;
-	border-style: solid none none none;
+	border-style: none none none none;
 	border-color: black;
 }
 
@@ -148,7 +148,7 @@ div {
 
 
 	border-width: 1.5px;
-	border-style: solid none none solid;
+	border-style: none none none solid;
 	border-color: black;
 }
 
