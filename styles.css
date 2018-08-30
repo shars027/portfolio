@@ -1,31 +1,3 @@
-/* Begin CSS Reset code */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-/* End CSS Reset code */
-
 @font-face {
     font-family: "helveticaneue-thin";
     src: url("helveticaneue-thin-13-webfont.woff") format('woff'),
@@ -34,14 +6,108 @@ footer, header, hgroup, menu, nav, section {
     font-style: normal;
 }
 
-div {
-	font-family: "helveticaneue-thin", sans-serif;
-	display: block;
-	
-	/* width */
+* {
+	padding: 0;
+	margin: 0;
 }
-	div::-webkit-scrollbar {
-	    width: 6px;
+
+body {
+	width: 100vw;
+	font-family: "helveticaneue-thin";
+}
+
+#logo {
+	position: fixed;
+	max-width: 90vw;
+	max-height: 10vh; 
+	padding-right: 5vw;
+	padding-left: 5vw;
+	left: 0; right: 0; margin: auto;
+	background-color: white;
+}
+
+#alert {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background-color: yellow;
+	z-index: 1;
+	line-height: 100vh;
+}
+
+	#temp {
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		vertical-align: middle;
+		font-size: 20px;
+		line-height: normal;
+	}
+
+#notlogo {
+	position: fixed;
+	overflow: auto;
+	top: 10vh;
+	width: 100vw;
+	height: 90vh;
+}
+
+	.artboard {
+		position: relative;
+		height: 100%;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		white-space: nowrap;
+		padding-left: 100px;
+		padding-right: 100px;
+		border-width: 1px 0px 0px 0px;
+		border-color: black;
+		border-style: solid;
+	}
+
+	img {
+		max-width: 100%;
+		max-height: 90%;
+		vertical-align: middle;
+	}
+
+	.names {
+		position: relative;
+		line-height: 10vh;
+		vertical-align: middle;
+		font-size: 5vh;
+		left: -50px;
+	}
+
+	.blank {
+		position: relative;
+		width: 250px;
+		white-space: nowrap;
+		display: inline-block;
+}
+
+#notlogo {
+	-webkit-overflow-scrolling: touch;
+ 	-webkit-scroll-snap-type: mandatory;
+    -ms-scroll-snap-type: mandatory;
+        scroll-snap-type: mandatory;
+ 	-webkit-scroll-snap-destination: 100% 0%;
+    -ms-scroll-snap-destination: 100% 0%;
+        scroll-snap-destination: 100% 0%;
+  	-webkit-scroll-snap-points-y: repeat(100%);
+    -ms-scroll-snap-points-y: repeat(100%);
+        scroll-snap-points-y: repeat(100%);
+}
+
+	.artboarc {
+		scroll-snap-align: start;
+		-webkit-transition: all 0.3s ease-out;
+ 		transition: all 0.3s ease-out;
+	}
+
+	div::-webkit-scrollbar { 
+		width: 0;
+		height: 0;
 	}
 
 	/* Track */
@@ -54,118 +120,8 @@ div {
 	    opacity: 0;
 	}
 
-	/* Handle on hover */
-	div::-webkit-scrollbar-thumb:hover {
-	    background: black;
-	    opacity: 1;
-
-	    border-width: 1.5px;
-	    border-style: none solid none none;
-	}
-
-#logo_bar {
-	position: fixed;
-
-	width: 60%;
-	height: 75px;
-
-	border-width: 1.5px;
-	border-style: none solid solid none;
-	border-color: black;
+a {
+	text-decoration: none;
+	color: magenta;
 }
 
-	img#logo {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		margin: auto;
-		left: 20px;
-		width: calc(100% - 40px);
-		max-height: 75px;
-	}
-
-#title_sec {
-	position: fixed;
-	margin-left: 60%;
-
-	width: calc(40% - 1.5px);
-	height: 75px;
-	overflow: scroll;
-
-	border-width: 1.5px;
-	border-style: none none solid solid;
-	border-color: black;
-	overflow-x: hidden;
-}
-	
-	div.title {
-		position: relative;
-		width: 100%;
-		height: 100%;
-	}
-
-		p.title_names {
-			position: absolute;
-			right: 20px;
-			top: 1.5px;
-			bottom: 0;
-
-			font-size: 50px;
-			overflow: hidden;
-		}
-
-#description_sec {
-	position: fixed;
-	width: 30%;
-	height: calc(100% - 75px);
-	overflow-y: auto;
-
-	top: 75px;
-
-	border-width: 1.5px;
-	border-style: none none none none;
-	border-color: black;
-}
-
-	div.description {
-		display: flex;
-		align-items: center;
-
-		width: calc(100% - 40px);
-		height: calc(100% - 40px);
-
-		margin: 20px;
-	}
-
-#content_sec {
-	position: fixed;
-	width: calc(70% - 1.5px);
-	height: calc(100% - 75px);
-	overflow-y: auto;
-
-	top: 75px;
-	margin-left: 30%;
-
-
-	border-width: 1.5px;
-	border-style: none none none solid;
-	border-color: black;
-}
-
-	div.project {
-		position: relative;
-		width: 100%;
-		height: 100%;
-	}
-
-		img.project_pics {
-			position: absolute;
-			right: 0;
-			left: 0;
-			top: 0;
-			bottom: 0;
-			margin: auto;
-
-			width: 500px;
-			max-width: calc(100% - 40px);
-		}

@@ -1,18 +1,3 @@
-/*
- * jquery.scrollSync
- * Synchronize scroll between multiple containers with varying size
- * Date: 20151201
- * 
- * Thomas Frost
- * http://xtf.dk/
- *
- * Required:
- * jQuery
- *  http://jquery.com/
- * 
- * Usage:
- * $('.scrollable').scrollSync();
- */
 (function ($) {
     $.fn.scrollSync = function () {
         var $this = $(this);
